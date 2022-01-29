@@ -5,7 +5,8 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
-STATUS =((0, "Draft"), (1, "Published"))
+STATUS = ((0, "Draft"), (1, "Published"))
+
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -26,7 +27,7 @@ class Post(models.Model):
         return self.title
 
     def number_of_likes(self):
-        return self.likes.count() 
+        return self.likes.count()
 
 
 class Comment(models.Model):
@@ -42,4 +43,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
